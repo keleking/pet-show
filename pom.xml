@@ -9,14 +9,14 @@
   <packaging>pom</packaging>
   <version>1.0.0</version>
   <modules>
-    <module>market-web</module>
-    <module>market-api</module>
-    <module>market-api-impl</module>
-    <module>market-service</module>
-    <module>market-model</module>
-    <module>market-framework</module>
-    <module>market-config</module>
-    <module>market-db-dal</module>
+    <module>pet-web</module>
+    <module>pet-api</module>
+    <module>pet-api-impl</module>
+    <module>pet-service</module>
+    <module>pet-model</module>
+    <module>pet-framework</module>
+    <module>pet-config</module>
+    <module>pet-db-dal</module>
   </modules>
 
   <name>super-mark</name>
