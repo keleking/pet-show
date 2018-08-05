@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cn.wx.wechat.dal.user.UserAddressDOMapper">
+  <resultMap id="BaseResultMap" type="com.cn.wx.wechat.dal.user.entity.UserAddressDO">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="open_id" jdbcType="VARCHAR" property="openId" />
+    <result column="user_name" jdbcType="VARCHAR" property="userName" />
+    <result column="user_tele" jdbcType="VARCHAR" property="userTele" />
+    <result column="province" jdbcType="VARCHAR" property="province" />
+    <result column="city" jdbcType="VARCHAR" property="city" />
+    <result column="district" jdbcType="VARCHAR" property="district" />
+    <result column="detail" jdbcType="VARCHAR" property="detail" />
+    <result column="create_gmt" jdbcType="TIMESTAMP" property="createGmt" />
+    <result column="update_gmt" jdbcType="TIMESTAMP" property="updateGmt" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, open_id, user_name, user_tele, province, city, district, detail, create_gmt, 
+    update_gmt
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from user_address
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <select id="selectByOpenId" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from user_address
+    where open_id = #{openId,jdbcType=VARCHAR}
+  </select>
+
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from user_address
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.cn.wx.wechat.dal.user.entity.UserAddressDO">
+    insert into user_address (id, open_id, user_name, 
+      user_tele, province, city, 
+      district, detail, create_gmt, 
+      update_gmt)
+    values (#{id,jdbcType=BIGINT}, #{openId,jdbcType=VARCHAR}, #{userName,jdbcType=VARCHAR}, 
+      #{userTele,jdbcType=VARCHAR}, #{province,jdbcType=VARCHAR}, #{city,jdbcType=VARCHAR}, 
+      #{district,jdbcType=VARCHAR}, #{detail,jdbcType=VARCHAR}, #{createGmt,jdbcType=TIMESTAMP}, 
+      #{updateGmt,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.cn.wx.wechat.dal.user.entity.UserAddressDO">
+    insert into user_address
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="openId != null">
+        open_id,
+      </if>
+      <if test="userName != null">
+        user_name,
+      </if>
+      <if test="userTele != null">
+        user_tele,
+      </if>
+      <if test="province != null">
+        province,
+      </if>
+      <if test="city != null">
+        city,
+      </if>
+      <if test="district != null">
+        district,
+      </if>
+      <if test="detail != null">
+        detail,
+      </if>
+      <if test="createGmt != null">
+        create_gmt,
+      </if>
+      <if test="updateGmt != null">
+        update_gmt,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="openId != null">
+        #{openId,jdbcType=VARCHAR},
+      </if>
+      <if test="userName != null">
+        #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="userTele != null">
+        #{userTele,jdbcType=VARCHAR},
+      </if>
+      <if test="province != null">
+        #{province,jdbcType=VARCHAR},
+      </if>
+      <if test="city != null">
+        #{city,jdbcType=VARCHAR},
+      </if>
+      <if test="district != null">
+        #{district,jdbcType=VARCHAR},
+      </if>
+      <if test="detail != null">
+        #{detail,jdbcType=VARCHAR},
+      </if>
+      <if test="createGmt != null">
+        #{createGmt,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateGmt != null">
+        #{updateGmt,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.cn.wx.wechat.dal.user.entity.UserAddressDO">
+    update user_address
+    <set>
+      <if test="openId != null">
+        open_id = #{openId,jdbcType=VARCHAR},
+      </if>
+      <if test="userName != null">
+        user_name = #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="userTele != null">
+        user_tele = #{userTele,jdbcType=VARCHAR},
+      </if>
+      <if test="province != null">
+        province = #{province,jdbcType=VARCHAR},
+      </if>
+      <if test="city != null">
+        city = #{city,jdbcType=VARCHAR},
+      </if>
+      <if test="district != null">
+        district = #{district,jdbcType=VARCHAR},
+      </if>
+      <if test="detail != null">
+        detail = #{detail,jdbcType=VARCHAR},
+      </if>
+      <if test="createGmt != null">
+        create_gmt = #{createGmt,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateGmt != null">
+        update_gmt = #{updateGmt,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.cn.wx.wechat.dal.user.entity.UserAddressDO">
+    update user_address
+    set open_id = #{openId,jdbcType=VARCHAR},
+      user_name = #{userName,jdbcType=VARCHAR},
+      user_tele = #{userTele,jdbcType=VARCHAR},
+      province = #{province,jdbcType=VARCHAR},
+      city = #{city,jdbcType=VARCHAR},
+      district = #{district,jdbcType=VARCHAR},
+      detail = #{detail,jdbcType=VARCHAR},
+      create_gmt = #{createGmt,jdbcType=TIMESTAMP},
+      update_gmt = #{updateGmt,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>
