@@ -9,9 +9,9 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>market-model</artifactId>
+    <artifactId>pet-api-impl</artifactId>
 
-    <name>market-model</name>
+    <name>pet-api-impl</name>
     <!-- FIXME change it to the project's website -->
     <url>http://www.example.com</url>
 
