@@ -7,7 +7,7 @@ import org.springframework.context.annotation.ComponentScan;
 
 /**
  * @program: pet-show
- * @description: ${description}
+ * @description: 宠宠秀启动类
  * @author: king
  * @create: 2018-07-09 20:25
  **/
